@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
-  color: white;
+  font-size: 1.5rem;
+  font-family: 'Abyssinica SIL', serif;
 }

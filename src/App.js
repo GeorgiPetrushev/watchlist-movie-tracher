@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navigation from "./components/style/Navigation";
-import AddMovie from "./components/style/AddMovie";
-import WatchList from "./components/style/WatchList";
-import Watched from "./components/style/Watched";
+import Navigation from "./components/Navigation";
+import AddMovie from "./components/AddMovie";
+import WatchList from "./components/WatchList";
+import Watched from "./components/Watched";
 
 function App() {
   return (
