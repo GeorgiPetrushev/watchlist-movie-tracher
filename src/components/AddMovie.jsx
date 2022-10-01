@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import AddMovieStyle from "./style/AddMovieStyle";
+import MovieCard from "./MovieCard";
+
 
 const AddMovie = () => {
   const [query, setQuery] = useState("");
@@ -15,6 +17,7 @@ const AddMovie = () => {
       .then((data) => {
         if (!data.errors) {
           setMovieResults(data.results);
+          console.log(data.results);
         } else {
           setMovieResults([]);
         }
@@ -32,7 +35,7 @@ const AddMovie = () => {
       ></input>
       <div className="result-list">
         {movieResults.map((movie) => (
-          <h1>{movie.title}</h1>
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </AddMovieStyle>

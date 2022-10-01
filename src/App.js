@@ -3,9 +3,11 @@ import Navigation from "./components/Navigation";
 import AddMovie from "./components/AddMovie";
 import WatchList from "./components/WatchList";
 import Watched from "./components/Watched";
+import { GlobalProvider } from "./components/context/GlobalContext";
 
 function App() {
   return (
+    <GlobalProvider>
     <Router>
       <Navigation />
       <Switch>
@@ -21,6 +23,7 @@ function App() {
           </Route>
         </Switch>
     </Router>
+    </GlobalProvider>
   );
 }
 
