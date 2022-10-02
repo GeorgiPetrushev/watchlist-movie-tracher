@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddMovieStyle from "./style/AddMovieStyle";
-import MovieCard from "./MovieCard";
+import MovieCardResult from "./MovieCardResult";
 
 
 const AddMovie = () => {
@@ -35,7 +35,7 @@ const AddMovie = () => {
       ></input>
       <div className="result-list">
         {movieResults.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCardResult key={movie.id} movie={movie} />
         ))}
       </div>
     </AddMovieStyle>

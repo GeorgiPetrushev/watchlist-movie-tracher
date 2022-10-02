@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { GlobalContext } from "./context/GlobalContext";
+import MovieCardGeneral from "./MovieCardGeneral";
 
 const WatchList = () => {
+  const { watchlist } = useContext(GlobalContext);
+  console.log(watchlist);
   return (
-    <div>WatchList</div>
-  )
-}
+    <div>
+      <h1>My Watchlist</h1>
 
-export default WatchList
+      {watchlist.length >0 ? (      <div>
+        {watchlist.map((movie) => {
+          return (
+            <MovieCardGeneral key={movie.id} movie={movie} type="watchlist" />
+          );
+        })}
+      </div>): (<h1>No Movies in Watchlist</h1>)}
+
+    </div>
+  );
+};
+
+export default WatchList;

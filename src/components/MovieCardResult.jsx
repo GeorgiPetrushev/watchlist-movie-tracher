@@ -2,7 +2,7 @@ import React ,{useContext}from "react";
 import { GlobalContext } from "./context/GlobalContext";
 
 
-const MovieCard = ({ movie }) => {
+const MovieCardResult = ({ movie }) => {
 
   const{addMovieToWatchList ,watchlist} = useContext(GlobalContext);
 
@@ -27,4 +27,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default MovieCardResult;
