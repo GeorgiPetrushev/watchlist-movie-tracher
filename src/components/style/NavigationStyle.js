@@ -6,7 +6,7 @@ const NavigationStyle = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-right: 2em ;
-  height: 3em;
+  height: 7vh;
   .container-right {
     display: flex;
     align-items: center;

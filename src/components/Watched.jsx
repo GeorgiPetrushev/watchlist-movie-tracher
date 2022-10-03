@@ -8,14 +8,19 @@ const Watched = () => {
   return (
     <div>
       <div>Watched movies</div>
+      <div>
+        {" "}
+        You have {watched.length} {watched.length === 1 ? "Movie" : "Movies"} in
+        your Watched section
+      </div>
       {watched.length > 0 ? (
         <div>
           {watched.map((movie) => (
-            <MovieCardGeneral  key={movie.id} movie={movie} type="watched" />
+            <MovieCardGeneral key={movie.id} movie={movie} type="watched" />
           ))}
         </div>
       ) : (
-        <div>No movies in section Watched</div>
+        <div>There is no movies added in section Watched.</div>
       )}
     </div>
   );

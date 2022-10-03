@@ -5,8 +5,9 @@ import NavigationStyle from "./style/NavigationStyle";
 const Navigation = () => {
   return (
     <NavigationStyle>
-      {" "}
-      <Link to="/">Logo</Link>
+        <div>
+          <Link to="/add-movie" className="add">+Add</Link>
+        </div>
       <div className="container-right">
         <div>
           <Link to="/">WatchList</Link>
@@ -14,9 +15,7 @@ const Navigation = () => {
         <div>
           <Link to="/watched">Watched</Link>
         </div>
-        <div>
-          <Link to="/add-movie" className="add">+Add</Link>
-        </div>
+
       </div>
   
     </NavigationStyle>

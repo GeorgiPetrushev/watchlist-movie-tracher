@@ -1,29 +1,31 @@
 import React ,{useContext}from "react";
 import { GlobalContext } from "./context/GlobalContext";
+import MovieCardResultStyle from "./style/MovieCardResultStyle";
 
 
 const MovieCardResult = ({ movie }) => {
 
-  const{addMovieToWatchList ,watchlist} = useContext(GlobalContext);
+  const{addMovieToWatchList ,watchlist,watched} = useContext(GlobalContext);
 
-  let preventDoubleAdd = watchlist.find(arr => arr.id === movie.id);
+  //preventing form double add the same movie
+  let preventDoubleAdd = watchlist.find(arr => arr.id === movie.id) || watched.find(arr => arr.id === movie.id);
   const disable = preventDoubleAdd ? true : false;
 
   return (
-    <div>
+    <MovieCardResultStyle>
       {movie.poster_path ? (
-        <img
+        <img className="img"
           src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
           alt=" missing"
         ></img>
       ) : (
-        <div>{movie.title}</div>
+        <div className="img img-miss">{movie.title}</div>
       )}
       <div>{movie.title}</div>
 
-      <div>{movie.release_date ? movie.release_date.slice(0, 4) : ""}</div>
-      <button disabled={disable} onClick={()=>addMovieToWatchList(movie)}> Add to Watch list</button> 
-    </div>
+      <div>Data: {movie.release_date ? movie.release_date : ""}</div>
+      <button className="btn-result" disabled={disable} onClick={()=>addMovieToWatchList(movie)}> Add to Watch list</button> 
+    </MovieCardResultStyle>
   );
 };
 

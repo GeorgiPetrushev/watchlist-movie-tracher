@@ -28,6 +28,7 @@ const AddMovie = () => {
     <AddMovieStyle>
       {" "}
       <input
+      className="input-search"
         type="text"
         placeholder="Search for a movie"
         value={query}

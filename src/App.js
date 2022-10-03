@@ -8,21 +8,20 @@ import { GlobalProvider } from "./components/context/GlobalContext";
 function App() {
   return (
     <GlobalProvider>
-    <Router>
-      <Navigation />
-      <Switch>
+      <Router>
+        <Navigation />
+        <Switch>
           <Route exact path="/">
-          <WatchList />
+            <WatchList />
           </Route>
           <Route path="/watched">
             <Watched />
           </Route>
           <Route path="/add-movie">
-            
             <AddMovie />
           </Route>
         </Switch>
-    </Router>
+      </Router>
     </GlobalProvider>
   );
 }
