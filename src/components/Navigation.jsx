@@ -5,19 +5,21 @@ import NavigationStyle from "./style/NavigationStyle";
 const Navigation = () => {
   return (
     <NavigationStyle>
+      <div className="container-nav">
         <div>
-          <Link to="/add-movie" className="add">+Add</Link>
+          <Link to="/add-movie" className="add">
+            +Add
+          </Link>
         </div>
-      <div className="container-right">
-        <div>
-          <Link to="/">WatchList</Link>
+        <div className="container-right">
+          <div>
+            <Link to="/">WatchList</Link>
+          </div>
+          <div>
+            <Link to="/watched">Watched</Link>
+          </div>
         </div>
-        <div>
-          <Link to="/watched">Watched</Link>
-        </div>
-
       </div>
-  
     </NavigationStyle>
   );
 };

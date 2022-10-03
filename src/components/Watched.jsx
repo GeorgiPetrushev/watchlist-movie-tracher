@@ -1,28 +1,30 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "./context/GlobalContext";
 import MovieCardGeneral from "./MovieCardGeneral";
+import WatchedAndWatchlistStyle from "./style/WatchedAndWatchlistStyle";
 
 const Watched = () => {
   const { watched } = useContext(GlobalContext);
 
   return (
-    <div>
-      <div>Watched movies</div>
-      <div>
-        {" "}
-        You have {watched.length} {watched.length === 1 ? "Movie" : "Movies"} in
-        your Watched section
+    <WatchedAndWatchlistStyle>
+      <div className="top">
+        <h2 className="top-left">Watched movies</h2>
+        <div className="top-right">
+          {" "}
+         {watched.length} {watched.length === 1 ? "Movie" : "Movies"}{" "}
+        </div>
       </div>
       {watched.length > 0 ? (
-        <div>
+        <div className="main-section">
           {watched.map((movie) => (
             <MovieCardGeneral key={movie.id} movie={movie} type="watched" />
           ))}
         </div>
       ) : (
-        <div>There is no movies added in section Watched.</div>
+        <div className="main-section">There is no movies added in section Watched.</div>
       )}
-    </div>
+    </WatchedAndWatchlistStyle>
   );
 };
 

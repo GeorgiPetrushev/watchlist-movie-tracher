@@ -24,7 +24,7 @@ const MovieCardResult = ({ movie }) => {
       <div>{movie.title}</div>
 
       <div>Data: {movie.release_date ? movie.release_date : ""}</div>
-      <button className="btn-result" disabled={disable} onClick={()=>addMovieToWatchList(movie)}> Add to Watch list</button> 
+      <button className="button2" disabled={disable} onClick={()=>addMovieToWatchList(movie)}> Add to Watch list</button> 
     </MovieCardResultStyle>
   );
 };

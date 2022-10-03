@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "./context/GlobalContext";
+import { AiFillDelete } from "react-icons/ai";
+import MovieCardGeneralButtonsStyle from "./style/MovieCardGeneralButtonsStyle";
 
 const MovieCardGeneralButtons = ({ movie, type }) => {
   const {
@@ -10,28 +12,37 @@ const MovieCardGeneralButtons = ({ movie, type }) => {
   } = useContext(GlobalContext);
 
   return (
-    <div>
+    <MovieCardGeneralButtonsStyle>
       {type === "watchlist" && (
-        <div>
-          <button onClick={() => moveMovieFromWatchListToWatched(movie)}>
+        <div className="container-btn">
+          <button
+            className="btn add-btn"
+            onClick={() => moveMovieFromWatchListToWatched(movie)}
+          >
             Move to Watched
           </button>
-          <button onClick={() => deleteMovieFromWatchList(movie)}>
-            Remove from Watchlist
+          <button
+            className="btn delete"
+            onClick={() => deleteMovieFromWatchList(movie)}
+          >
+            <AiFillDelete />
           </button>
         </div>
       )}
       {type === "watched" && (
-        <div>
-          <button onClick={() => moveMovieFromWatchedToWatchList(movie)}>
+        <div className="container-btn">
+          <button
+            className="btn add-btn"
+            onClick={() => moveMovieFromWatchedToWatchList(movie)}
+          >
             Move back to Watchlist
           </button>
-          <button onClick={() => deleteMovieFromWatched(movie)}>
-            Delete the Movie
+          <button className="btn delete" onClick={() => deleteMovieFromWatched(movie)}>
+            <AiFillDelete />
           </button>
         </div>
       )}
-    </div>
+    </MovieCardGeneralButtonsStyle>
   );
 };
 

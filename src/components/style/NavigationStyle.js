@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 const NavigationStyle = styled.div`
-  background-color: #001f3f;
+  background-color: 	#0e1111;
+
+.container-nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 2em ;
-  height: 7vh;
+  height: 5rem;
+  max-width: 860px;
+  margin: auto;
+}
   .container-right {
     display: flex;
     align-items: center;
