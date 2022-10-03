@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { GlobalContext } from "./context/GlobalContext";
+import MovieCardGeneral from "./MovieCardGeneral";
 
 const Watched = () => {
-  return (
-    <div>Watched</div>
-  )
-}
+  const { watched } = useContext(GlobalContext);
 
-export default Watched
+  return (
+    <div>
+      <div>Watched movies</div>
+      {watched.length > 0 ? (
+        <div>
+          {watched.map((movie) => (
+            <MovieCardGeneral  key={movie.id} movie={movie} type="watched" />
+          ))}
+        </div>
+      ) : (
+        <div>No movies in section Watched</div>
+      )}
+    </div>
+  );
+};
+
+export default Watched;

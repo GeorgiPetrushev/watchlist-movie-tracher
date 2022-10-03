@@ -9,14 +9,17 @@ const WatchList = () => {
     <div>
       <h1>My Watchlist</h1>
 
-      {watchlist.length >0 ? (      <div>
-        {watchlist.map((movie) => {
-          return (
-            <MovieCardGeneral key={movie.id} movie={movie} type="watchlist" />
-          );
-        })}
-      </div>): (<h1>No Movies in Watchlist</h1>)}
-
+      {watchlist.length > 0 ? (
+        <div>
+          {watchlist.map((movie) => {
+            return (
+              <MovieCardGeneral key={movie.id} movie={movie} type="watchlist" />
+            );
+          })}
+        </div>
+      ) : (
+        <h1>No Movies in Watchlist</h1>
+      )}
     </div>
   );
 };

@@ -1,3 +1,5 @@
+//main global Reducer
+
 export const AppReducer= (state, action) => {
   switch (action.type) {
     case "ADD_MOVIE_TO_WATCHLIST":
@@ -5,6 +7,29 @@ export const AppReducer= (state, action) => {
         ...state,
         watchlist: [action.payload, ...state.watchlist],
       };
+      case "DELETE_MOVIE_FROM_WATCHLIST":
+        return {
+          ...state,
+          watchlist: state.watchlist.filter((movie)=>movie.id !==action.payload.id),
+        };
+        case "MOVE_MOVIE_FROM_WATCHLIST_TO_WATCHED":
+          return {
+            ...state,
+            watchlist: state.watchlist.filter((movie)=>movie.id !==action.payload.id),
+            watched: [action.payload, ...state.watched],
+          };
+          case "DELETE_MOVIE_FROM_WATCHED":
+            return {
+              ...state,
+              watched: state.watched.filter((movie)=>movie.id !==action.payload.id),
+            };
+            case "MOVE_MOVIE_FROM_WATCHED_TO_WATCHLIST":
+              return {
+                ...state,
+                watched: state.watched.filter((movie)=>movie.id !==action.payload.id),
+                watchlist: [action.payload, ...state.watchlist],
+              };
+        
     default:
       return state;
   }

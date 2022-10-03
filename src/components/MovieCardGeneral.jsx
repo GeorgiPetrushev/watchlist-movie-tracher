@@ -1,4 +1,5 @@
 import React from "react";
+import MovieCardGeneralButtons from "./MovieCardGeneralButtons";
 
 const MovieCardGeneral = ({movie,type}) => {
   return (
@@ -14,8 +15,7 @@ const MovieCardGeneral = ({movie,type}) => {
         <div>{movie.title}</div>
 
         <div>{movie.release_date ? movie.release_date.slice(0, 4) : ""}</div>
-        <button> Add to Watched</button>
-        <button>Remove</button>
+          <MovieCardGeneralButtons movie={movie} type={type}/>
 
     </div>
   );
