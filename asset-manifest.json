@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/watchlist-movie-tracher/static/css/main.df58919d.css",
+    "main.js": "/watchlist-movie-tracher/static/js/main.677491e5.js",
+    "index.html": "/watchlist-movie-tracher/index.html",
+    "main.df58919d.css.map": "/watchlist-movie-tracher/static/css/main.df58919d.css.map",
+    "main.677491e5.js.map": "/watchlist-movie-tracher/static/js/main.677491e5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df58919d.css",
+    "static/js/main.677491e5.js"
+  ]
+}
