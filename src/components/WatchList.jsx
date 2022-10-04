@@ -29,7 +29,7 @@ const WatchList = () => {
         <div className="main-section">
           <div>There is no movies added in section Watchlist. </div>
           <div>
-            If you want to add some movies pred{" "}
+            If you want to add some movies press{" "}
             <Link to="/add-movie" className="add">
               Here
             </Link>
